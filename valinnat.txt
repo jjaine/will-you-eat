@@ -1,1 +1,30 @@
 Valintojen maailma:
+
+0v:
+
+try to stand up -> DIE
+eat the coin -> DIE 50/50
+poop -> OK
+
+5v:
+climb up the shelf -> DIE
+eat the coin -> DIE 50/50 / save the coin
+read book (+1 smart) / play games (+1 games) / go out to play (+1 sport)
+
+10v:
+jump around -> DIE
+go out -> if smart, OK, else DIE
+eat the coin -> DIE 50/50 / save the coin
+buy blocks (+1 smart) / buy candy (-1 sport) / play football (+1 sport)
+
+15v:
+drive a moped -> DIE
+eat the coin -> DIE 50/50, (-1 smart) / save the coin
+go to ASM (+2 games) / go fishing (+1 sport) / go to school (+1 smart)
+
+20v:
+eat the coin -> DIE 50/50, (-1 smart) / save the coin
+drink beer -> DIE 50/50 (-1 sport) / go to Jukola relay (+2 sport) / go to ASM (+2 games) / read for entrance exams (+2 smart) / buy a TV (-1 sport)
+
+25v:
+end, we tell you what you've become
