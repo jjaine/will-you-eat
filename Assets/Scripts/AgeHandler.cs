@@ -14,6 +14,7 @@ public class AgeHandler : MonoBehaviour {
 	public GameObject ending;
 	public GameObject endMusic;
 	public GameObject ambientPlayer, pianoPlayer;
+	public GameObject occupation;
 
 	// Use this for initialization
 	void Start () {
@@ -82,6 +83,16 @@ public class AgeHandler : MonoBehaviour {
 			endMusic.SetActive(true);
 			pianoPlayer.SetActive(false);
 			ambientPlayer.SetActive(false);
+			if(GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart >= GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games
+				&& GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart >= GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport)
+				occupation.GetComponent<Text>().text = "You became a doctor!";
+			else if(GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games >= GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart
+				&& GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games >= GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport)
+				occupation.GetComponent<Text>().text = "You became a game developer!";
+			else if(GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport >= GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart
+				&& GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport >= GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games)
+				occupation.GetComponent<Text>().text = "You became a star athlete!";
+
 			ending.transform.GetChild(2).GetComponent<Text>().text = GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart +
 			" smartness\n" + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games + 
 			" gaming-skillz\n" + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport + 

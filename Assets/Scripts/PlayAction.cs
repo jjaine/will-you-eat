@@ -24,25 +24,17 @@ public class PlayAction : MonoBehaviour {
 	}
 
 	public void GameOver(string reason){
-		ageHandler.GetComponent<AgeHandler>().age=0;
+		//ageHandler.GetComponent<AgeHandler>().age=0;
 		fail.SetActive(true);
 		ambient.SetActive(false);
 		endScreen.SetActive(true);
 		deathCause.text = reason;
 		piano.SetActive(false);
-		StartCoroutine(Reload());
+		//StartCoroutine(Reload());
 	}
 
-	IEnumerator Reload(){
-		StartCoroutine(ShowText());
-		yield return new WaitForSeconds(5.0f);
+	public void Restart(){
 		SceneManager.LoadScene(0);
-		yield return null;
-	}
-
-	IEnumerator ShowText(){
-		yield return new WaitForSeconds(1.0f);
-		reload.enabled = true;
 	}
 
 	public void NextStage(){
@@ -84,6 +76,15 @@ public class PlayAction : MonoBehaviour {
 	}
 
 	public void BuyStuff(string type){
+		if(type == "beer"){
+			if(Random.Range(0.0f, 1.0f) < 0.5f)
+				GameOver("You got alcohol poisoning!");
+			else{
+				NextStage();
+				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport--;
+			}
+		}
+
 		if(GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().money > 0){
 			if(type == "lego")
 				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart++;

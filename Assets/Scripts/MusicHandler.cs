@@ -26,7 +26,8 @@ public class MusicHandler : MonoBehaviour {
 			}
 			if(!ambient.isPlaying){
 				piano.SetActive(true);
-				ambient.Play();
+				if(ambient.gameObject.activeSelf)
+					ambient.Play();
 				ambient.loop = true;
 				pianoActive = true;
 			}
