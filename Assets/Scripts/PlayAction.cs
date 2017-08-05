@@ -83,9 +83,17 @@ public class PlayAction : MonoBehaviour {
 			NextStage();
 	}
 
-	public void BuyStuff(){
+	public void BuyStuff(string type){
 		if(GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().money > 0){
-			GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart++;
+			if(type == "lego")
+				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart++;
+			else if(type == "candy")
+				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport--;
+			else if(type == "asm" && GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().money > 1){
+				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games+=2;
+				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().money--;
+			}
+			GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().money--;
 			NextStage();
 		}
 	}
