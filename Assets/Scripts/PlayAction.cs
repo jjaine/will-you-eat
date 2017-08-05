@@ -12,13 +12,13 @@ public class PlayAction : MonoBehaviour {
 	public GameObject fail;
 	public GameObject ageHandler;
 	public GameObject eatButton, saveButton;
+	public GameObject current;
+	public GameObject nextButton;
 
 	void Start(){
 		endScreen.SetActive(false);
 		reload.enabled = false;
 		ambient = GameObject.Find("AmbientPlayer");
-		//piano = GameObject.Find("PianoPlayer");
-		//fail = GameObject.Find("FailPlayer");
 		fail.SetActive(false);
 		ageHandler = GameObject.Find("AgeHandler");
 	}
@@ -37,8 +37,100 @@ public class PlayAction : MonoBehaviour {
 		SceneManager.LoadScene(0);
 	}
 
+	public void UpdateText(){
+		if(gameObject.transform.name=="BookButton"){
+			current.GetComponent<Text>().text = "You find an interesting book and\nuse the rest of the evening reading it.";
+		}
+		else if(gameObject.transform.name=="DoorButton"){
+			current.GetComponent<Text>().text = "The sun is shining and all your friends are calling\nso you decide to go out to play with them.";
+		}
+		else if(gameObject.transform.name=="ShelfButton"){
+			current.GetComponent<Text>().text = "You climb up the bookcase.";
+			GameOver("you fell!");
+		}
+		else if(gameObject.transform.name=="PoopButton"){
+			current.GetComponent<Text>().text = "You decide to continue your daily routine\nof eating, sleeping and pooping.";
+		}
+		else if(gameObject.transform.name=="CribButton"){
+			current.GetComponent<Text>().text = "You try to stand up against your crib.";
+			GameOver("you fell on your head!");
+		}
+		else if(gameObject.transform.name=="DoorSmartButton"){
+			current.GetComponent<Text>().text = "You decide that the best place \nto release all that excess energy is outside.";
+		}
+		else if(gameObject.transform.name=="AmigaButton"){
+			current.GetComponent<Text>().text = "The only thing in your house that is relevant\nto your interests is your computer.";
+		}
+		else if(gameObject.transform.name=="BuyLegosButton"){
+			BuyStuff("lego");
+			current.GetComponent<Text>().text = "For a long time you have wanted to buy some building\nblocks and now you finally have the money for it.";
+		}
+		else if(gameObject.transform.name=="SchoolButton"){
+			current.GetComponent<Text>().text = "Now is the time to study.";
+		}
+		else if(gameObject.transform.name=="FishingButton"){
+			current.GetComponent<Text>().text = "Being outdoors is your thing.";
+		}
+		else if(gameObject.transform.name=="BuyCandyButton"){
+			BuyStuff("candy");
+			current.GetComponent<Text>().text = "All you want to do is eat some candy,\nluckily your home includes a vending machine that sells it.";
+		}
+		else if(gameObject.transform.name=="BuyASMButton"){
+			BuyStuff("asm");
+			current.GetComponent<Text>().text = "You can finally go to the ASM party.";
+		}
+		else if(gameObject.transform.name=="ExamButton"){
+			current.GetComponent<Text>().text = "You spend your time studying because you want to be\na doctor one day and need to ace that entrance exam.";
+		}
+		else if(gameObject.transform.name=="FootballButton"){
+			current.GetComponent<Text>().text = "You have no time for anything but football.";
+		}
+		else if(gameObject.transform.name=="BeerButton"){
+			current.GetComponent<Text>().text = "You like to hang out with your friends drinking beer.";
+		}
+		else if(gameObject.transform.name=="JukolaButton"){
+			current.GetComponent<Text>().text = "You have a very promising relay career\nand little to no time for anything else.";
+		}
+
+		nextButton.SetActive(true);
+	}
+
 	public void NextStage(){
-		ageHandler.GetComponent<AgeHandler>().age+=5;
+		if(gameObject.transform.name=="DoorSmartButton"){
+			if(GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart < 1){
+				GameOver("You got hit by a car, because you were not smart enough");
+			}
+			else
+				ageHandler.GetComponent<AgeHandler>().age+=5;
+		}
+		else if(gameObject.transform.name=="BeerButton"){
+			if(Random.Range(0.0f, 1.0f) < 0.5f)
+				GameOver("You got alcohol poisoning!");
+			else{
+				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport--;
+				ageHandler.GetComponent<AgeHandler>().age+=5;
+			}
+		}
+		else
+			ageHandler.GetComponent<AgeHandler>().age+=5;
+
+		nextButton.SetActive(false);
+
+		if(ageHandler.GetComponent<AgeHandler>().age == 0){
+			current.GetComponent<Text>().text = "You are under one year old and you know how to crawl.\nYou want to explore your home.";
+		}
+		else if(ageHandler.GetComponent<AgeHandler>().age == 5){
+			current.GetComponent<Text>().text = "Now you are 5 years old.\nYou are feeling bored and need something to do.";
+		}
+		else if(ageHandler.GetComponent<AgeHandler>().age == 10){
+			current.GetComponent<Text>().text = "You have reached the age of 10.\nYou are home alone and have lots of energy.";		
+		}
+		else if(ageHandler.GetComponent<AgeHandler>().age == 15){
+			current.GetComponent<Text>().text = "You are a 15-year-old teenager\nin some rebellious teenage phase.";
+		}
+		else if(ageHandler.GetComponent<AgeHandler>().age == 20){
+			current.GetComponent<Text>().text = "You are a young adult in your twenties, congrats!\nNow what will you do?";
+		}
 	}
 
 	public void EatCoin(){
@@ -67,24 +159,7 @@ public class PlayAction : MonoBehaviour {
 		saveButton.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y+100, Input.mousePosition.z);
 	}
 
-	public void GoOutSmart(){
-		if(GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart < 1){
-			GameOver("You got hit by a car, because you were not smart enough");
-		}
-		else
-			NextStage();
-	}
-
 	public void BuyStuff(string type){
-		if(type == "beer"){
-			if(Random.Range(0.0f, 1.0f) < 0.5f)
-				GameOver("You got alcohol poisoning!");
-			else{
-				NextStage();
-				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport--;
-			}
-		}
-
 		if(GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().money > 0){
 			if(type == "lego")
 				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart++;
@@ -95,7 +170,6 @@ public class PlayAction : MonoBehaviour {
 				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().money--;
 			}
 			GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().money--;
-			NextStage();
 		}
 	}
 }

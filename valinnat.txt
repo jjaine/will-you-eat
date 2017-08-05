@@ -36,13 +36,12 @@ tekemättä:
 
 10v:
 jump around -> DIE
-buy candy (-1 sport) / play football (+1 sport)
 
 15v:
 drive a moped -> DIE
 
 20v:
-drink beer -> DIE 50/50 (-1 sport) / go to Jukola relay (+2 sport) / go to ASM (+2 games) / read for entrance exams (+2 smart) / buy a TV (-1 sport)
+buy a TV (-1 sport)
 
 25v:
 end, we tell you what you've become
