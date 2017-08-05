@@ -23,7 +23,7 @@ ModelImporter:
     4300002: CribMattress_Cube.004_Mat_CribSheets
     4300004: CribMattress_Cube.004_Mat_CribSheets_NONE
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

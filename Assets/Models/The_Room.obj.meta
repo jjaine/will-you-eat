@@ -33,7 +33,7 @@ ModelImporter:
     4300006: "Sein\xE4t_Cube_Mat_RoomFloor"
     4300008: "Sein\xE4t_Cube_Mat_RoomWalls"
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

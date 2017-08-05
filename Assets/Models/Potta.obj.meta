@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 1ec57446b959b5a45892846396e0cd7c
-timeCreated: 1501853816
+guid: 7900f2abb7d51144ca3cf4ca46762a51
+timeCreated: 1501925159
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cube_Cube.005_Mat_Hylly
+    100000: default
     100002: //RootNode
-    400000: Cube_Cube.005_Mat_Hylly
+    400000: default
     400002: //RootNode
-    2300000: Cube_Cube.005_Mat_Hylly
-    3300000: Cube_Cube.005_Mat_Hylly
-    4300000: Cube_Cube.005_Mat_Hylly
+    2300000: default
+    3300000: default
+    4300000: default
   materials:
     importMaterials: 0
     materialName: 0
