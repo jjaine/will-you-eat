@@ -17,7 +17,7 @@ public class PlayAction : MonoBehaviour {
 		endScreen.SetActive(false);
 		reload.enabled = false;
 		ambient = GameObject.Find("AmbientPlayer");
-		piano = GameObject.Find("PianoPlayer");
+		//piano = GameObject.Find("PianoPlayer");
 		//fail = GameObject.Find("FailPlayer");
 		fail.SetActive(false);
 		ageHandler = GameObject.Find("AgeHandler");
@@ -27,9 +27,9 @@ public class PlayAction : MonoBehaviour {
 		ageHandler.GetComponent<AgeHandler>().age=0;
 		fail.SetActive(true);
 		ambient.SetActive(false);
-		piano.SetActive(false);
 		endScreen.SetActive(true);
 		deathCause.text = reason;
+		piano.SetActive(false);
 		StartCoroutine(Reload());
 	}
 

@@ -12,6 +12,7 @@ public class AgeHandler : MonoBehaviour {
 	public int age = 0;
 	public GameObject current;
 	public GameObject ending;
+	public GameObject endMusic;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +32,7 @@ public class AgeHandler : MonoBehaviour {
 			yearold20[i].SetActive(false);
 		}
 		ending.SetActive(false);
+		endMusic.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -70,6 +72,7 @@ public class AgeHandler : MonoBehaviour {
 		}
 		else if(age == 25){
 			ending.SetActive(true);
+			endMusic.SetActive(true);
 			ending.transform.GetChild(2).GetComponent<Text>().text = GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart +
 			" smartness\n" + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games + 
 			" gaming-skillz\n" + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport + 
