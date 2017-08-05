@@ -13,9 +13,9 @@ public class CameraMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.mousePosition.x < 300)
+		if(Input.mousePosition.x < 500)
 			targetPos = new Vector3(2.2f, transform.position.y, transform.position.z);
-		else if (Input.mousePosition.x > 1620)
+		else if (Input.mousePosition.x > 1200)
 			targetPos = new Vector3(-2.2f, transform.position.y, transform.position.z);
 		else
 			targetPos = origPos;
