@@ -11,6 +11,7 @@ public class AgeHandler : MonoBehaviour {
 	public List<GameObject> yearold20;
 	public int age = 0;
 	public GameObject current;
+	public GameObject ending;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +30,7 @@ public class AgeHandler : MonoBehaviour {
 		for(int i=0; i<yearold20.Count; i++){
 			yearold20[i].SetActive(false);
 		}
+		ending.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -62,9 +64,16 @@ public class AgeHandler : MonoBehaviour {
 			for(int i=0; i<yearold15.Count; i++){
 				yearold15[i].SetActive(false);
 			}
-			for(int i=20; i<yearold20.Count; i++){
+			for(int i=0; i<yearold20.Count; i++){
 				yearold20[i].SetActive(true);
 			}
+		}
+		else if(age == 25){
+			ending.SetActive(true);
+			ending.transform.GetChild(2).GetComponent<Text>().text = GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart +
+			" smartness\n" + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games + 
+			" gaming-skillz\n" + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport + 
+			" sport-skillz\n" + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().money + " money";
 		}
 	}
 }

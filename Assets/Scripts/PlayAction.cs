@@ -55,6 +55,8 @@ public class PlayAction : MonoBehaviour {
 		else{
 			saveButton.SetActive(false);
 			NextStage();
+			if(ageHandler.GetComponent<AgeHandler>().age > 5)
+				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart--;
 		}
 	}
 
@@ -69,10 +71,8 @@ public class PlayAction : MonoBehaviour {
 	public void ChooseCoinAction(){
 		eatButton.SetActive(true);
 		eatButton.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y-100, Input.mousePosition.z);
-
 		saveButton.SetActive(true);
 		saveButton.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y+100, Input.mousePosition.z);
-
 	}
 
 	public void GoOutSmart(){
@@ -81,5 +81,12 @@ public class PlayAction : MonoBehaviour {
 		}
 		else
 			NextStage();
+	}
+
+	public void BuyStuff(){
+		if(GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().money > 0){
+			GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart++;
+			NextStage();
+		}
 	}
 }
