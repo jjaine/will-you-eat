@@ -13,6 +13,7 @@ public class AgeHandler : MonoBehaviour {
 	public GameObject current;
 	public GameObject ending;
 	public GameObject endMusic;
+	public GameObject ambientPlayer, pianoPlayer;
 
 	// Use this for initialization
 	void Start () {
@@ -73,6 +74,8 @@ public class AgeHandler : MonoBehaviour {
 		else if(age == 25){
 			ending.SetActive(true);
 			endMusic.SetActive(true);
+			pianoPlayer.SetActive(false);
+			ambientPlayer.SetActive(false);
 			ending.transform.GetChild(2).GetComponent<Text>().text = GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart +
 			" smartness\n" + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games + 
 			" gaming-skillz\n" + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport + 
