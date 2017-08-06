@@ -184,6 +184,7 @@ public class PlayAction : MonoBehaviour {
 			GameOver("You choked on the quarter!");
 		else{
 			saveButton.SetActive(false);
+			eatButton.SetActive(false);
 			NextStage();
 			if(ageHandler.GetComponent<AgeHandler>().age > 5)
 				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart--;
