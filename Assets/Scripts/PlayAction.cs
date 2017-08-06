@@ -176,7 +176,6 @@ public class PlayAction : MonoBehaviour {
 			current.GetComponent<Text>().text = "You are a young adult in your twenties, congrats!\nNow what will you do?";
 		}
 		buttonName = null;
-		Debug.Log("smart: " + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart + " sport: " + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport + " games: " + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games);
 	}
 
 	public void EatCoin(){
