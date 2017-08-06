@@ -14,6 +14,7 @@ public class PlayAction : MonoBehaviour {
 	public GameObject eatButton, saveButton;
 	public GameObject current;
 	public GameObject nextButton;
+	static string buttonName;
 
 	void Start(){
 		endScreen.SetActive(false);
@@ -46,17 +47,18 @@ public class PlayAction : MonoBehaviour {
 		}
 		else if(gameObject.transform.name=="ShelfButton"){
 			current.GetComponent<Text>().text = "You climb up the bookcase.";
-			GameOver("you fell!");
+			buttonName = "ShelfButton";
 		}
 		else if(gameObject.transform.name=="PoopButton"){
 			current.GetComponent<Text>().text = "You decide to continue your daily routine\nof eating, sleeping and pooping.";
 		}
 		else if(gameObject.transform.name=="CribButton"){
 			current.GetComponent<Text>().text = "You try to stand up against your crib.";
-			GameOver("you fell on your head!");
+			buttonName = "CribButton";
 		}
 		else if(gameObject.transform.name=="DoorSmartButton"){
 			current.GetComponent<Text>().text = "You decide that the best place \nto release all that excess energy is outside.";
+			buttonName = "DoorSmartButton";
 		}
 		else if(gameObject.transform.name=="AmigaButton"){
 			current.GetComponent<Text>().text = "The only thing in your house that is relevant\nto your interests is your computer.";
@@ -87,29 +89,43 @@ public class PlayAction : MonoBehaviour {
 		}
 		else if(gameObject.transform.name=="BeerButton"){
 			current.GetComponent<Text>().text = "You like to hang out with your friends drinking beer.";
+			buttonName = "BeerButton";
 		}
 		else if(gameObject.transform.name=="JukolaButton"){
 			current.GetComponent<Text>().text = "You have a very promising relay career\nand little to no time for anything else.";
+		}
+		else if(gameObject.transform.name=="JumpButton"){
+			current.GetComponent<Text>().text = "You just can't concentrate on anything so you jump around the house.";
+			buttonName = "JumpButton";
 		}
 
 		nextButton.SetActive(true);
 	}
 
 	public void NextStage(){
-		if(gameObject.transform.name=="DoorSmartButton"){
+		if(buttonName=="DoorSmartButton"){
 			if(GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart < 1){
 				GameOver("You got hit by a car, because you were not smart enough");
 			}
 			else
 				ageHandler.GetComponent<AgeHandler>().age+=5;
 		}
-		else if(gameObject.transform.name=="BeerButton"){
+		else if(buttonName=="BeerButton"){
 			if(Random.Range(0.0f, 1.0f) < 0.5f)
 				GameOver("You got alcohol poisoning!");
 			else{
 				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport--;
 				ageHandler.GetComponent<AgeHandler>().age+=5;
 			}
+		}
+		else if(buttonName=="CribButton"){
+			GameOver("you fell on your head!");
+		}
+		else if(buttonName=="ShelfButton"){
+			GameOver("you fell!");
+		}
+		else if(buttonName=="JumpButton"){
+			GameOver("you hit your head!");
 		}
 		else
 			ageHandler.GetComponent<AgeHandler>().age+=5;
@@ -131,6 +147,7 @@ public class PlayAction : MonoBehaviour {
 		else if(ageHandler.GetComponent<AgeHandler>().age == 20){
 			current.GetComponent<Text>().text = "You are a young adult in your twenties, congrats!\nNow what will you do?";
 		}
+		buttonName = null;
 	}
 
 	public void EatCoin(){
