@@ -41,9 +41,11 @@ public class PlayAction : MonoBehaviour {
 	public void UpdateText(){
 		if(gameObject.transform.name=="BookButton"){
 			current.GetComponent<Text>().text = "You find an interesting book and\nuse the rest of the evening reading it.";
+			buttonName = "BookButton";
 		}
 		else if(gameObject.transform.name=="DoorButton"){
 			current.GetComponent<Text>().text = "The sun is shining and all your friends are calling\nso you decide to go out to play with them.";
+			buttonName = "DoorButton";
 		}
 		else if(gameObject.transform.name=="ShelfButton"){
 			current.GetComponent<Text>().text = "You climb up the bookcase.";
@@ -51,6 +53,7 @@ public class PlayAction : MonoBehaviour {
 		}
 		else if(gameObject.transform.name=="PoopButton"){
 			current.GetComponent<Text>().text = "You decide to continue your daily routine\nof eating, sleeping and pooping.";
+			buttonName = null;
 		}
 		else if(gameObject.transform.name=="CribButton"){
 			current.GetComponent<Text>().text = "You try to stand up against your crib.";
@@ -62,30 +65,38 @@ public class PlayAction : MonoBehaviour {
 		}
 		else if(gameObject.transform.name=="AmigaButton"){
 			current.GetComponent<Text>().text = "The only thing in your house that is relevant\nto your interests is your computer.";
+			buttonName = "AmigaButton";
 		}
 		else if(gameObject.transform.name=="BuyLegosButton"){
 			BuyStuff("lego");
 			current.GetComponent<Text>().text = "For a long time you have wanted to buy some building\nblocks and now you finally have the money for it.";
+			buttonName = "BuyLegosButton";
 		}
 		else if(gameObject.transform.name=="SchoolButton"){
 			current.GetComponent<Text>().text = "Now is the time to study.";
+			buttonName = "SchoolButton";
 		}
 		else if(gameObject.transform.name=="FishingButton"){
 			current.GetComponent<Text>().text = "Being outdoors is your thing.";
+			buttonName = "FishingButton";
 		}
 		else if(gameObject.transform.name=="BuyCandyButton"){
 			BuyStuff("candy");
 			current.GetComponent<Text>().text = "All you want to do is eat some candy,\nluckily your home includes a vending machine that sells it.";
+			buttonName = null;
 		}
 		else if(gameObject.transform.name=="BuyASMButton"){
 			BuyStuff("asm");
 			current.GetComponent<Text>().text = "You can finally go to the ASM party.";
+			buttonName = "BuyASMButton";
 		}
 		else if(gameObject.transform.name=="ExamButton"){
 			current.GetComponent<Text>().text = "You spend your time studying because you want to be\na doctor one day and need to ace that entrance exam.";
+			buttonName = "ExamButton";
 		}
 		else if(gameObject.transform.name=="FootballButton"){
 			current.GetComponent<Text>().text = "You have no time for anything but football.";
+			buttonName = "FootballButton";
 		}
 		else if(gameObject.transform.name=="BeerButton"){
 			current.GetComponent<Text>().text = "You like to hang out with your friends drinking beer.";
@@ -93,9 +104,10 @@ public class PlayAction : MonoBehaviour {
 		}
 		else if(gameObject.transform.name=="JukolaButton"){
 			current.GetComponent<Text>().text = "You have a very promising relay career\nand little to no time for anything else.";
+			buttonName = "JukolaButton";
 		}
 		else if(gameObject.transform.name=="JumpButton"){
-			current.GetComponent<Text>().text = "You just can't concentrate on anything so you jump around the house.";
+			current.GetComponent<Text>().text = "You just can't concentrate on anything\nso you jump around the house.";
 			buttonName = "JumpButton";
 		}
 
@@ -127,6 +139,22 @@ public class PlayAction : MonoBehaviour {
 		else if(buttonName=="JumpButton"){
 			GameOver("you hit your head!");
 		}
+		else if(buttonName=="BookButton"||buttonName=="BuyLegosButton"||buttonName=="SchoolButton"||buttonName=="ExamButton"){
+			GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart++;
+			ageHandler.GetComponent<AgeHandler>().age+=5;
+		}
+		else if(buttonName=="DoorButton"||buttonName=="FishingButton"||buttonName=="FootballButton"||buttonName=="JukolaButton"){
+			GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport++;
+			if(buttonName=="JukolaButton")
+				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport++;
+			ageHandler.GetComponent<AgeHandler>().age+=5;
+		}
+		else if(buttonName=="AmigaButton"||buttonName=="BuyASMButton"||buttonName=="FootballButton"||buttonName=="JukolaButton"){
+			GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games++;
+			if(buttonName=="BuyASMButton")
+				GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games++;
+			ageHandler.GetComponent<AgeHandler>().age+=5;
+		}
 		else
 			ageHandler.GetComponent<AgeHandler>().age+=5;
 
@@ -148,6 +176,7 @@ public class PlayAction : MonoBehaviour {
 			current.GetComponent<Text>().text = "You are a young adult in your twenties, congrats!\nNow what will you do?";
 		}
 		buttonName = null;
+		Debug.Log("smart: " + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().smart + " sport: " + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().sport + " games: " + GameObject.Find("PlayerAttributes").GetComponent<PlayerAttributes>().games);
 	}
 
 	public void EatCoin(){

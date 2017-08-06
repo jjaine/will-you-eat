@@ -367,17 +367,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1857711239}
-        m_MethodName: addSport
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &45085486
@@ -1090,17 +1079,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1857711239}
-        m_MethodName: addSmart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &138693344
@@ -1236,8 +1214,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 155762363}
-        m_MethodName: GameOver
-        m_Mode: 5
+        m_MethodName: UpdateText
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1328,6 +1306,10 @@ Prefab:
       propertyPath: m_Name
       value: BuyASM
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 9fdb1e6efd4094545abfdc84235b3b3d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96e3eb9a8ca3298439414941b0deafe2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9fdb1e6efd4094545abfdc84235b3b3d, type: 3}
   m_IsPrefabParent: 0
@@ -2895,17 +2877,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1857711239}
-        m_MethodName: addSmart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &613769571
@@ -3346,7 +3317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a430bcb17db5430298f6544175c6b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowMaterial: {fileID: 2100000, guid: 7c1e83b66845b884d9197e8f855a1ef8, type: 2}
+  glowMaterial: {fileID: 2100000, guid: 52f6909986116413e8263c22fd1f654c, type: 2}
   button: {fileID: 560131990}
 --- !u!64 &734735110
 MeshCollider:
@@ -3924,17 +3895,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1857711239}
-        m_MethodName: addGames
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &808561614
@@ -4204,7 +4164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a430bcb17db5430298f6544175c6b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowMaterial: {fileID: 2100000, guid: 7c1e83b66845b884d9197e8f855a1ef8, type: 2}
+  glowMaterial: {fileID: 2100000, guid: 5bab8fd0512d14c1f9d86d6768dfc5b7, type: 2}
   button: {fileID: 1094389912}
 --- !u!64 &883411158
 MeshCollider:
@@ -4271,6 +4231,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 9fdb1e6efd4094545abfdc84235b3b3d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 224e066e8730c06458cb2654463c7625, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9fdb1e6efd4094545abfdc84235b3b3d, type: 3}
   m_IsPrefabParent: 0
@@ -4946,17 +4910,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1857711239}
-        m_MethodName: addSport
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1042593867
@@ -5117,6 +5070,10 @@ Prefab:
       propertyPath: m_Name
       value: BuyCandy
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 9fdb1e6efd4094545abfdc84235b3b3d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1ce99ce87b3aef498aa1babb918ace7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9fdb1e6efd4094545abfdc84235b3b3d, type: 3}
   m_IsPrefabParent: 0
@@ -6064,7 +6021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a430bcb17db5430298f6544175c6b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowMaterial: {fileID: 2100000, guid: 7c1e83b66845b884d9197e8f855a1ef8, type: 2}
+  glowMaterial: {fileID: 2100000, guid: f7f6990332f2e42eb9b1f949255caade, type: 2}
   button: {fileID: 26093527}
 --- !u!64 &1175832156
 MeshCollider:
@@ -6109,7 +6066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a430bcb17db5430298f6544175c6b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowMaterial: {fileID: 2100000, guid: 7c1e83b66845b884d9197e8f855a1ef8, type: 2}
+  glowMaterial: {fileID: 2100000, guid: 6755c5768c8634f5d911c175b8558a49, type: 2}
   button: {fileID: 2020531957}
 --- !u!1 &1245243382 stripped
 GameObject:
@@ -6380,17 +6337,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1293681612}
         m_MethodName: UpdateText
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1857711239}
-        m_MethodName: addSport
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8138,6 +8084,10 @@ Prefab:
       propertyPath: m_Name
       value: MagicalVendingmachineASM
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 9d0fdcc810afd324ba6ea0e6eaea4874, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 260b6b878c6e2304b92369b3e44ae63a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d0fdcc810afd324ba6ea0e6eaea4874, type: 3}
   m_IsPrefabParent: 0
@@ -8246,6 +8196,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -4.868
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 9b2fff8377f943547a7b881ed188f022, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b6d7176342883b4b91e98f6a2bc1f4d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b2fff8377f943547a7b881ed188f022, type: 3}
   m_IsPrefabParent: 0
@@ -8724,28 +8678,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1790998486}
         m_MethodName: UpdateText
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1857711239}
-        m_MethodName: addSmart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1857711239}
-        m_MethodName: addSmart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9651,17 +9583,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2008111580}
         m_MethodName: UpdateText
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1857711239}
-        m_MethodName: addSport
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
